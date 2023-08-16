@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:mysql://localhost:3306/backend?serverTimezone=UTC}
+    username: ${JDBC_DATABASE_USERNAME:root}
+    password: ${JDBC_DATABASE_PASSWORD:toor}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  docker:
+    compose:
+      lifecycle-management: start-only
+springdoc:
+  pathsToMatch: /api/**
+
+jwt:
+  secret: couture
